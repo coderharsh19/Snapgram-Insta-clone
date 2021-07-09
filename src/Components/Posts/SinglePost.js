@@ -9,7 +9,7 @@ const SingePost = ({ username, caption, uploadedImage, userPhoto, postId }) => {
   const user = useContext(UserContext);
   const [comments, setComments] = useState([]);
 
-  /// Retriving posts from Firebase DB on page reload
+  /// Retriving comments from Firebase DB on page reload
   useEffect(() => {
     if (postId) {
       db.collection("posts")
