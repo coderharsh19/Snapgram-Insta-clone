@@ -1,3 +1,12 @@
+This is a Instagram clone app with all the basic functionalties. 
+
+1. Run "npm install"
+2. Run npm start
+
+This app uses React js and firebase with Google authentication.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
