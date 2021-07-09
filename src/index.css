@@ -1,0 +1,37 @@
+:root {
+  --logo_font: "Fjalla One", sans-serif;
+  --body_font: "IBM Plex Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body_font);
+  color: #222;
+  background-color: #f7f7f7;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--body_font);
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-family: var(--body_font);
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+}

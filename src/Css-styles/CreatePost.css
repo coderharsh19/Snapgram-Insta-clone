@@ -1,0 +1,87 @@
+.upload {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  gap: 1rem;
+  padding: 1rem;
+  transform: translateX(0);
+  transition: 300ms ease-in-out;
+}
+
+.slide {
+  opacity: 0;
+}
+
+.upload form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.upload form > input {
+  display: none;
+  font-size: 1rem;
+}
+
+.upload form > label {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.upload .upload__caption {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px solid #80808059;
+}
+
+.upload .upload__button {
+  width: 100%;
+  height: 30px;
+  background: #ff6c0c;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: -40px;
+  z-index: 1;
+}
+
+.upload form .upload__progress {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 5rem;
+  right: 13px;
+}
+
+.image_preview__container {
+}
+
+#file_name {
+  text-align: left;
+  margin-top: -13px;
+  font-weight: 400;
+}
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #444;
+  outline: none;
+}
