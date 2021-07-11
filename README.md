@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+
+Live demo of App : https://snapgram-43830.web.app/
 =======
 This is a Instagram clone app with all the basic functionalties. 
 
