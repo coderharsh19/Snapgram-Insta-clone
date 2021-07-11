@@ -6,7 +6,7 @@ import { UserContext } from "../../UserContext";
 
 import { db } from "../../Config/Firebase";
 
-const Posts = () => {
+const Posts = ({ getUsername }) => {
   const user = useContext(UserContext);
 
   const [posts, setPosts] = useState([]);
@@ -42,6 +42,7 @@ const Posts = () => {
             caption={post.caption}
             username={post.username}
             userPhoto={post.userPhoto}
+            getUsername={getUsername}
           />
         );
       })}

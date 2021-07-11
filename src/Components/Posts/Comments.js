@@ -1,8 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { BiTrash } from "react-icons/bi";
 import { db } from "../../Config/Firebase";
-import firebase from "firebase";
 
 const Comments = ({ username, comment, commentId, postId }) => {
   const user = useContext(UserContext);

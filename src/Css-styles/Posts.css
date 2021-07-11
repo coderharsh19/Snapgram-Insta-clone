@@ -3,6 +3,7 @@
   height: auto;
   display: flex;
   align-items: center;
+  padding: 1rem;
   margin: 0 auto;
   flex-direction: column;
 }
@@ -168,4 +169,26 @@
 }
 
 .single_post .comment_form .comment_form__button:hover {
+}
+
+@media (max-width: 900px) {
+  .single_post .comments__container .comment .comment__username {
+    width: auto;
+    font-size: 1rem;
+  }
+  .single_post
+    .single_post__data
+    .single_post__caption__container
+    .single_post__caption {
+    font-size: 1rem;
+  }
+
+  .single_post__username {
+    width: auto;
+    font-size: 1rem;
+  }
+
+  .single_post .comments__container .comment__delete {
+    font-size: 20px;
+  }
 }

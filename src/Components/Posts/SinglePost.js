@@ -4,8 +4,16 @@ import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../UserContext";
 import { BiTrash } from "react-icons/bi";
 import { db } from "../../Config/Firebase";
+import { Link } from "react-router-dom";
 
-const SingePost = ({ username, caption, uploadedImage, userPhoto, postId }) => {
+const SingePost = ({
+  username,
+  caption,
+  uploadedImage,
+  userPhoto,
+  postId,
+  getUsername,
+}) => {
   const user = useContext(UserContext);
   const [comments, setComments] = useState([]);
 
@@ -44,7 +52,13 @@ const SingePost = ({ username, caption, uploadedImage, userPhoto, postId }) => {
     <div className="single_post">
       <div className="single_post__header">
         <img src={userPhoto} alt="user" className="single_post__thumbnail" />
-        <h3 className="single_post__username">{username}</h3>
+
+        <Link to="/profile">
+          <h3 className="single_post__username" onClick={getUsername}>
+            {username}
+          </h3>
+        </Link>
+
         <div className="single_post__delete">
           {user && user.email.replace("@gmail.com", "") === username ? (
             <BiTrash

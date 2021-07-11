@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
+import { UsernameContext } from "./UsernameContext";
 import firebase from "firebase";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import Header from "./Components/Header/Header";
-import Posts from "./Components/Posts/Posts";
+import Profile from "./Components/Profile";
+
+import Home from "./Components/Home";
 
 import { auth, provider } from "../src/Config/Firebase";
-import Welcome from "./Components/Welcome";
-import CreatePost from "./Components/CreatePost/CreatePost";
 
 function App() {
   const [slideUpload, setSlideUpload] = useState(false);
   const [user, setUser] = useState(null);
+  const [profileUser, setProfileUser] = useState("");
 
   /// Keep users logged in on page reloads
   useEffect(() => {
@@ -51,22 +54,43 @@ function App() {
     }
   };
 
+  const getUsername = (e) => {
+    setProfileUser(e.target.innerText);
+    console.log(profileUser);
+  };
+
   return (
     <UserContext.Provider value={user}>
-      <div className="App">
-        <Header
-          slideUp={() => {
-            setSlideUpload(!slideUpload);
-          }}
-          login={login}
-          user={user}
-          logout={logout}
-        />
+      <Router>
+        <div className="App">
+          <Header
+            slideUp={() => {
+              setSlideUpload(!slideUpload);
+            }}
+            login={login}
+            user={user}
+            logout={logout}
+          />
+          <Switch>
+            <Route path="/" exact>
+              <Home
+                user={user}
+                slideUpload={slideUpload}
+                getUsername={getUsername}
+              />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/profile" exact>
+              <Profile profileUser={profileUser.toLowerCase()} />
+            </Route>
+          </Switch>
 
-        {user && slideUpload ? <CreatePost slideUpload={slideUpload} /> : ""}
-        {user ? "" : <Welcome />}
-        <Posts />
-      </div>
+          {/*{user && slideUpload ? <CreatePost slideUpload={slideUpload} /> : ""}
+          {user ? "" : <Welcome />}
+          <Posts /> */}
+        </div>
+      </Router>
     </UserContext.Provider>
   );
 }
