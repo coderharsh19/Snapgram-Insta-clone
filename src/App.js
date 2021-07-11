@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
-import { UsernameContext } from "./UsernameContext";
 import firebase from "firebase";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
 import "./App.css";
 import Header from "./Components/Header/Header";
@@ -81,14 +86,10 @@ function App() {
             </Route>
           </Switch>
           <Switch>
-            <Route path="/profile" exact>
+            <Route path="/:id" exact>
               <Profile profileUser={profileUser.toLowerCase()} />
             </Route>
           </Switch>
-
-          {/*{user && slideUpload ? <CreatePost slideUpload={slideUpload} /> : ""}
-          {user ? "" : <Welcome />}
-          <Posts /> */}
         </div>
       </Router>
     </UserContext.Provider>

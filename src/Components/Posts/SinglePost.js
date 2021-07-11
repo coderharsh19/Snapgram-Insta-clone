@@ -53,7 +53,7 @@ const SingePost = ({
       <div className="single_post__header">
         <img src={userPhoto} alt="user" className="single_post__thumbnail" />
 
-        <Link to="/profile">
+        <Link to={{ pathname: `/${username}` }}>
           <h3 className="single_post__username" onClick={getUsername}>
             {username}
           </h3>
