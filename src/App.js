@@ -11,7 +11,7 @@ import {
 
 import "./App.css";
 import Header from "./Components/Header/Header";
-import Profile from "./Components/Profile";
+import Profile from "./Components/ProfilePage";
 
 import Home from "./Components/Home";
 

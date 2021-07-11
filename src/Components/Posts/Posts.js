@@ -43,6 +43,7 @@ const Posts = ({ getUsername }) => {
             username={post.username}
             userPhoto={post.userPhoto}
             getUsername={getUsername}
+            imageName={post.imageName}
           />
         );
       })}

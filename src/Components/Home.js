@@ -6,8 +6,7 @@ const Home = ({ user, slideUpload, getUsername }) => {
   return (
     <>
       {user && slideUpload ? <CreatePost slideUpload={slideUpload} /> : ""}
-      {user ? "" : <Welcome />}
-      <Posts getUsername={getUsername} />
+      {user ? <Posts getUsername={getUsername} /> : <Welcome />}
     </>
   );
 };

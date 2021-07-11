@@ -3,7 +3,7 @@ import CommentForm from "./CommentForm";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../UserContext";
 import { BiTrash } from "react-icons/bi";
-import { db } from "../../Config/Firebase";
+import { db, storageRef } from "../../Config/Firebase";
 import { Link } from "react-router-dom";
 
 const SingePost = ({
@@ -13,6 +13,7 @@ const SingePost = ({
   userPhoto,
   postId,
   getUsername,
+  imageName,
 }) => {
   const user = useContext(UserContext);
   const [comments, setComments] = useState([]);
@@ -37,6 +38,15 @@ const SingePost = ({
 
   /// Post Deletion (User can delete only the posts that he uploaded)
   const deletePost = () => {
+    storageRef
+      .child(`images/${imageName}`)
+      .delete()
+      .then(() => {
+        console.log("Uploaded image also deleted");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     db.collection("posts")
       .doc(postId)
       .delete()

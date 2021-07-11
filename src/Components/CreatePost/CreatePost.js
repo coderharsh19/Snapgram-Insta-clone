@@ -53,6 +53,7 @@ const CreatePost = ({ slideUpload }) => {
                 username: user.email.replace("@gmail.com", ""),
                 uploadedImage: imageUrl,
                 userPhoto: user.photoURL,
+                imageName: image.name,
               });
             });
           setCaption("");
