@@ -6,7 +6,7 @@ import { useState, useContext } from "react";
 import firebase from "firebase";
 import { storage, db } from "../../Config/Firebase";
 
-const CreatePost = ({ slideUpload }) => {
+const CreatePost = ({ slideUpload, setSlideUpload }) => {
   const user = useContext(UserContext);
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
@@ -19,7 +19,7 @@ const CreatePost = ({ slideUpload }) => {
     // console.log(e.target.files[0]);
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
-      console.log(e.target.files[0]);
+
       setFilename(`Selected image: ${e.target.files[0].name}`);
     }
   };
@@ -60,6 +60,7 @@ const CreatePost = ({ slideUpload }) => {
           setFilename("");
           setProgressBar(0);
           setImage("null");
+          setSlideUpload(!slideUpload);
         }
       );
     }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
 import firebase from "firebase";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -82,6 +83,7 @@ function App() {
                 user={user}
                 slideUpload={slideUpload}
                 getUsername={getUsername}
+                setSlideUpload={setSlideUpload}
               />
             </Route>
           </Switch>

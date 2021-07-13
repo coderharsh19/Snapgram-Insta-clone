@@ -1,16 +1,13 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyC03hYQihgWdUrN9kSGvwidfbYVhUkiGGA",
-  authDomain: "snapgram-43830.firebaseapp.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: "snapgram-43830",
   storageBucket: "snapgram-43830.appspot.com",
-  messagingSenderId: "723093481176",
-  appId: "1:723093481176:web:eb2eced8141c8e371099ad",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
-
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const db = firebaseApp.firestore();

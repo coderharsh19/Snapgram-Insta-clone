@@ -29,18 +29,19 @@
 
 .upload form > label {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 0.8rem;
+  right: 1rem;
   cursor: pointer;
 }
 
 .upload .upload__caption {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.7rem;
   font-size: 1.2rem;
   outline: none;
   border: 2px solid #80808059;
+  height: 220px;
 }
 
 .upload .upload__button {
