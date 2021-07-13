@@ -6,16 +6,15 @@ import { UserContext } from "../UserContext";
 
 import { db } from "../Config/Firebase";
 
-const Profile = ({ profileUser }) => {
+const Profile = ({ userProfile }) => {
   const user = useContext(UserContext);
 
   const [posts, setPosts] = useState([]);
 
-  /// Retriving comments from Firebase DB on page reload
-
   useEffect(() => {
+    let userProfile = localStorage.getItem("profileUser");
     db.collection("posts")
-      .where("username", "==", profileUser)
+      .where("username", "==", userProfile)
       .onSnapshot((snapshot) => {
         setPosts(
           snapshot.docs.map((doc) => ({
@@ -24,7 +23,7 @@ const Profile = ({ profileUser }) => {
           }))
         );
       });
-  }, [profileUser]);
+  }, []);
 
   return (
     <section

@@ -3,7 +3,7 @@ import CommentForm from "./CommentForm";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../UserContext";
 import { BiTrash } from "react-icons/bi";
-import { db, storageRef, storage } from "../../Config/Firebase";
+import { db, storageRef } from "../../Config/Firebase";
 import { Link } from "react-router-dom";
 
 const SingePost = ({

@@ -2,13 +2,7 @@ import { useState, useEffect } from "react";
 import { UserContext } from "./UserContext";
 import firebase from "firebase";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import Header from "./Components/Header/Header";
@@ -21,7 +15,8 @@ import { auth, provider } from "../src/Config/Firebase";
 function App() {
   const [slideUpload, setSlideUpload] = useState(false);
   const [user, setUser] = useState(null);
-  const [profileUser, setProfileUser] = useState("");
+
+  let userProfile;
 
   /// Keep users logged in on page reloads
   useEffect(() => {
@@ -61,8 +56,8 @@ function App() {
   };
 
   const getUsername = (e) => {
-    setProfileUser(e.target.innerText);
-    console.log(profileUser);
+    userProfile = e.target.innerText.toLowerCase();
+    localStorage.setItem("profileUser", userProfile);
   };
 
   return (
@@ -89,7 +84,7 @@ function App() {
           </Switch>
           <Switch>
             <Route path="/:id" exact>
-              <Profile profileUser={profileUser.toLowerCase()} />
+              <Profile userProfile={userProfile} />
             </Route>
           </Switch>
         </div>

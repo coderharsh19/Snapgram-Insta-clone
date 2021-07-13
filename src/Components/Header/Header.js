@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 import HeaderMenu from "./HeaderMenu";
 
-const Header = ({ slideUp, login, user, logout }) => {
+const Header = ({ slideUp, login, user, logout, setProfileUser }) => {
+  // const clearLocalStorage = () => {
+  //   // localStorage.clear();
+  //   setProfileUser("");
+  // };
   return (
     <div className="header">
       <div className="header__inner_container">
