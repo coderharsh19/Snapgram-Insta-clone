@@ -5,9 +5,18 @@ Live demo of App : https://snapgram-43830.web.app/
 This is a Instagram clone app with all the basic functionalties. 
 
 1. Run "npm install"
-2. Run npm start
+2. Update the firebase config file with your API_KEYS
+3. Run npm start
 
 This app uses React js and firebase with Google authentication.
+
+Features:-
+1. Realtime data fetching
+2. Realtime comment and post updation
+3. Post and comment deletion
+4. Fetching posts by username
+5. Login with Google Authentication
+
 
 
 
